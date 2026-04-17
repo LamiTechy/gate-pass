@@ -96,6 +96,7 @@ git push origin main
 ### Step 5: Deploy to Vercel (5 min)
 
 1. Go to https://vercel.com/new
+
 2. Import your GitHub repo
 3. Keep defaults (Framework: Auto-detect, Build: dist)
 4. Add environment variables:
