@@ -80,8 +80,9 @@ export function GuestRegistration() {
     }
   };
 
-  const formatDate = (timestamp: number) => {
-    return new Date(timestamp).toLocaleDateString('en-US', {
+  const formatDate = (timestamp: number | string) => {
+    const num = typeof timestamp === 'string' ? parseInt(timestamp) : timestamp;
+    return new Date(num).toLocaleDateString('en-US', {
       weekday: 'long',
       year: 'numeric',
       month: 'long',
