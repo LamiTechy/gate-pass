@@ -242,6 +242,11 @@ app.get('/api/auth/me', requireAuth, async (req, res) => {
   return res.json({ user: req.user });
 });
 
+// Health check route for Render
+app.get('/health', (req, res) => {
+  return res.json({ status: 'ok', timestamp: new Date().toISOString() });
+});
+
 app.get('/api/events', requireAuth, async (req, res) => {
   const rows = await getAll('SELECT * FROM events WHERE host_id = $1 ORDER BY date DESC', [req.user.id]);
   return res.json(rows.map(mapEvent));
