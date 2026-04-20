@@ -95,7 +95,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         clearTimeout(sessionTimer);
       }
     };
-  }, [isLoggedIn, resetSessionTimer, requiresReAuth, sessionTimer]);
+  }, [isLoggedIn, requiresReAuth]);
 
   return (
     <AuthContext.Provider value={{ user, isLoggedIn, login, logout, refreshUser, requiresReAuth, completeReAuth }}>
